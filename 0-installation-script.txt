@@ -1,0 +1,15 @@
+SASS Installation Steps:
+
+1. Make sure Node.js is installed on your machine.
+   - You can check by running: node -v
+   - If not installed, download from https://nodejs.org/
+
+2. Open a terminal (CMD or PowerShell).
+
+3. Run the following command to install SASS (version 3.7.4):
+   npm install sass -v 3.7.4
+
+4. Wait for the installation to complete.
+   - You can verify it by running: npx sass --version
+
+5. SASS is now ready to use.
