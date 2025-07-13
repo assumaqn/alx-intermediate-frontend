@@ -1,51 +1,31 @@
-interface DirectorInterface {
-  workFromHome(): string;
-  getCoffeeBreak(): string;
-  workDirectorTasks(): string;
-}
+/// <reference path="./subjects/Cpp.ts" />
+/// <reference path="./subjects/Java.ts" />
+/// <reference path="./subjects/React.ts" />
 
-interface TeacherInterface {
-  workFromHome(): string;
-  getCoffeeBreak(): string;
-  workTeacherTasks(): string;
-}
+export const cpp = new Subjects.Cpp();
+export const java = new Subjects.Java();
+export const react = new Subjects.React();
 
-class Director implements DirectorInterface {
-  workFromHome(): string {
-    return "Working from home";
-  }
+export const cTeacher: Subjects.Teacher = {
+  firstName: 'John',
+  lastName: 'Doe',
+  experienceTeachingC: 10,
+};
 
-  getCoffeeBreak(): string {
-    return "Getting a coffee break";
-  }
+// Cpp
+console.log('C++');
+cpp.setTeacher(cTeacher);
+console.log(cpp.getRequirements());
+console.log(cpp.getAvailableTeacher());
 
-  workDirectorTasks(): string {
-    return "Getting to director tasks";
-  }
-}
+// Java
+console.log('Java');
+java.setTeacher(cTeacher);
+console.log(java.getRequirements());
+console.log(java.getAvailableTeacher());
 
-class Teacher implements TeacherInterface {
-  workFromHome(): string {
-    return "Cannot work from home";
-  }
-
-  getCoffeeBreak(): string {
-    return "Cannot have a break";
-  }
-
-  workTeacherTasks(): string {
-    return "Getting to work";
-  }
-}
-
-function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
-    return new Teacher();
-  }
-  return new Director();
-}
-
-// Testing output
-console.log(createEmployee(200));   // Teacher instance
-console.log(createEmployee(1000));  // Director instance
-console.log(createEmployee("$500")); // Director instance
+// React
+console.log('React');
+react.setTeacher(cTeacher);
+console.log(react.getRequirements());
+console.log(react.getAvailableTeacher());
